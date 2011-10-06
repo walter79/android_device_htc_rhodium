@@ -89,17 +89,49 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
-KERNEL_NAME := 2.6.29.6-flykernel-12a
+KERNEL_NAME := 2.6.29.6-flykernel-13
 
 PRODUCT_COPY_FILES += \
-    device/htc/hero/modules/modules.dep.bb:system/lib/modules/$(KERNEL_NAME)/modules.dep.bb \
+    device/htc/hero/modules/modules.alias.bin:system/lib/modules/$(KERNEL_NAME)/modules.alias.bin \
+    device/htc/hero/modules/modules.alias:system/lib/modules/$(KERNEL_NAME)/modules.alias \
+    device/htc/hero/modules/modules.ccwmap:system/lib/modules/$(KERNEL_NAME)/modules.ccwmap \
+    device/htc/hero/modules/modules.dep.bin:system/lib/modules/$(KERNEL_NAME)/modules.dep.bin \
+    device/htc/hero/modules/modules.ieee1394map:system/lib/modules/$(KERNEL_NAME)/modules.ieee1394map \
+    device/htc/hero/modules/modules.dep:system/lib/modules/$(KERNEL_NAME)/modules.dep \
+    device/htc/hero/modules/modules.devname:system/lib/modules/$(KERNEL_NAME)/modules.devname \
+    device/htc/hero/modules/modules.inputmap:system/lib/modules/$(KERNEL_NAME)/modules.inputmap \
+    device/htc/hero/modules/modules.isapnpmap:system/lib/modules/$(KERNEL_NAME)/modules.isapnpmap \
+    device/htc/hero/modules/modules.ofmap:system/lib/modules/$(KERNEL_NAME)/modules.ofmap \
     device/htc/hero/modules/modules.order:system/lib/modules/$(KERNEL_NAME)/modules.order \
-    device/htc/hero/modules/ip_gre.ko:system/lib/modules/$(KERNEL_NAME)/net/ipv4/ip_gre.ko \
-    device/htc/hero/modules/wlan.ko:system/lib/modules/$(KERNEL_NAME)/drivers/net/wireless/tiwlan1251/wlan.ko \
+    device/htc/hero/modules/modules.pcimap:system/lib/modules/$(KERNEL_NAME)/modules.pcimap \
+    device/htc/hero/modules/modules.seriomap:system/lib/modules/$(KERNEL_NAME)/modules.seriomap \
+    device/htc/hero/modules/modules.softdep:system/lib/modules/$(KERNEL_NAME)/modules.softdep \
+    device/htc/hero/modules/modules.symbols.bin:system/lib/modules/$(KERNEL_NAME)/modules.symbols.bin \
+    device/htc/hero/modules/modules.symbols:system/lib/modules/$(KERNEL_NAME)/modules.symbols \
+    device/htc/hero/modules/modules.usbmap:system/lib/modules/$(KERNEL_NAME)/modules.usbmap \
     device/htc/hero/modules/hid-dummy.ko:system/lib/modules/$(KERNEL_NAME)/drivers/hid/hid-dummy.ko \
+    device/htc/hero/modules/wlan.ko:system/lib/modules/$(KERNEL_NAME)/drivers/net/wireless/tiwlan1251/wlan.ko \
     device/htc/hero/modules/ramzswap.ko:system/lib/modules/$(KERNEL_NAME)/drivers/staging/ramzswap/ramzswap.ko \
+    device/htc/hero/modules/sdio.ko:system/lib/modules/$(KERNEL_NAME)/fake/sdio.ko \
+    device/htc/hero/modules/tiap_drv.ko:system/lib/modules/$(KERNEL_NAME)/fake/tiap_drv.ko \
     device/htc/hero/modules/cifs.ko:system/lib/modules/$(KERNEL_NAME)/fs/cifs/cifs.ko \
     device/htc/hero/modules/fuse.ko:system/lib/modules/$(KERNEL_NAME)/fs/fuse/fuse.ko \
+    device/htc/hero/modules/lockd.ko:system/lib/modules/$(KERNEL_NAME)/fs/lockd/lockd.ko \
+    device/htc/hero/modules/nfs.ko:system/lib/modules/$(KERNEL_NAME)/fs/nfs/nfs.ko \
+    device/htc/hero/modules/ah6.ko:system/lib/modules/$(KERNEL_NAME)/net/ipv6/ah6.ko \
+    device/htc/hero/modules/esp6.ko:system/lib/modules/$(KERNEL_NAME)/net/ipv6/esp6.ko \
+    device/htc/hero/modules/ip6_tunnel.ko:system/lib/modules/$(KERNEL_NAME)/net/ipv6/ip6_tunnel.ko \
+    device/htc/hero/modules/ipcomp6.ko:system/lib/modules/$(KERNEL_NAME)/net/ipv6/ipcomp6.ko \
+    device/htc/hero/modules/mip6.ko:system/lib/modules/$(KERNEL_NAME)/net/ipv6/mip6.ko \
+    device/htc/hero/modules/sit.ko:system/lib/modules/$(KERNEL_NAME)/net/ipv6/sit.ko \
+    device/htc/hero/modules/tunnel6.ko:system/lib/modules/$(KERNEL_NAME)/net/ipv6/tunnel6.ko \
+    device/htc/hero/modules/xfrm6_mode_beet.ko:system/lib/modules/$(KERNEL_NAME)/net/ipv6/xfrm6_mode_beet.ko \
+    device/htc/hero/modules/xfrm6_mode_transport.ko:system/lib/modules/$(KERNEL_NAME)/net/ipv6/xfrm6_mode_transport.ko \
+    device/htc/hero/modules/xfrm6_mode_tunnel.ko:system/lib/modules/$(KERNEL_NAME)/net/ipv6/xfrm6_mode_tunnel.ko \
+    device/htc/hero/modules/xfrm6_tunnel.ko:system/lib/modules/$(KERNEL_NAME)/net/ipv6/xfrm6_tunnel.ko \
+    device/htc/hero/modules/auth_rpcgss.ko:system/lib/modules/$(KERNEL_NAME)/net/sunrpc/auth_gss/auth_rpcgss.ko \
+    device/htc/hero/modules/rpcsec_gss_krb5.ko:system/lib/modules/$(KERNEL_NAME)/net/sunrpc/auth_gss/rpcsec_gss_krb5.ko \
+    device/htc/hero/modules/sunrpc.ko:system/lib/modules/$(KERNEL_NAME)/net/sunrpc/sunrpc.ko \
     device/htc/hero/modules/wlan.ko:system/lib/modules/wlan.ko
 
 # stuff common to all HTC phones
