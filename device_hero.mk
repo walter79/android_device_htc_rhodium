@@ -26,6 +26,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/hero/vold.fstab:system/etc/vold.fstab
 
+# Don't set /proc/sys/vm/dirty_ratio to 0 when USB mounting
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vold.umsdirtyratio=20
+
 # proprietary side of the device
 $(call inherit-product-if-exists, vendor/htc/hero/device_hero-vendor.mk)
 
