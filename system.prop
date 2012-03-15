@@ -19,14 +19,17 @@ ro.sf.lcd_density=160
 windowsmgr.max_events_per_sec=60
 settings.display.autobacklight=1
 
+# Disable ICS rotation animation, it's too slow
+persist.sys.rotationanimation=false
+
 # The OpenGL ES API level that is natively supported by this device.
 ro.opengles.version=65536
 ro.product.multi_touch_enabled=true
 
 # Tweaks
+persist.sys.scrollingcache=2
 persist.sys.use_dithering=1
 persist.sys.purgeable_assets=1
-debug.sf.hw=1
 ro.compcache.default=0
 
 #media
@@ -52,6 +55,5 @@ ro.media.enc.vid.m4v.fps       = 1,30
 persist.service.mount.playsnd = 0
 
 #dalvik options (more tweaks)
-dalvik.vm.execution-mode=int:jit
-dalvik.vm.heapsize=32m
+dalvik.vm.heapsize=24m
 dalvik.vm.dexopt-flags=m=y 
