@@ -49,8 +49,8 @@ BOARD_WLAN_TI_STA_DK_ROOT   := system/wlan/ti/sta_dk_4_0_4_32
 WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_ARG      := ""
 WIFI_DRIVER_MODULE_NAME     := "wlan"
-WIFI_FIRMWARE_LOADER        := "wlan_loader"
 WIFI_DRIVER_FW_AP_PATH      := "/etc/firmware/BCM4325_apsta.bin"
+WIFI_FIRMWARE_LOADER        := "wlan_loader"
 
 BOARD_KERNEL_CMDLINE := no_console_suspend=1 console=null
 BOARD_KERNEL_BASE := 0x19200000
@@ -67,13 +67,19 @@ BOARD_USE_USB_MASS_STORAGE_SWITCH := true
 
 BOARD_HAVE_BLUETOOTH := true
 
-BOARD_VENDOR_USE_AKMD := akm8973
+BOARD_VENDOR_USE_AKMD := true
 
 BOARD_VENDOR_QCOM_AMSS_VERSION := 6355
 
 BOARD_USES_QCOM_HARDWARE := true
 
 TARGET_HARDWARE_3D := false
+
+# Enable legacy graphics code in surfaceflinger, for performance improvement
+
+TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
+
+BOARD_AVOID_DRAW_TEXTURE_EXTENSION := true
 
 # OpenGL drivers config file path
 BOARD_EGL_CFG := device/htc/hero/egl.cfg
@@ -114,16 +120,14 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
 
 # # cat /proc/mtd
 # dev:    size   erasesize  name
-# mtd0: 00040000 00020000 "misc"
-# mtd1: 00500000 00020000 "recovery"
-# mtd2: 00280000 00020000 "boot"
-# mtd3: 05a00000 00020000 "system"
-# mtd4: 05000000 00020000 "cache"
-# mtd5: 127c0000 00020000 "userdata"
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00280000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00500000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x0aa00000
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x0a5c0000
+#mtd0: 005c0000 00020000 "recovery"
+#mtd1: 00100000 00020000 "misc"
+#mtd2: 00400000 00020000 "boot"
+#mtd3: 0c000000 00020000 "system"
+#mtd4: 0e4e0000 00020000 "userdata"
+#mtd5: 01060000 00020000 "cache"
+
+
 
 # The size of a block that can be marked bad.
 BOARD_FLASH_BLOCK_SIZE := 131072
