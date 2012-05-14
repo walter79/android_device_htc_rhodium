@@ -104,8 +104,8 @@
          Passion has no keyboard so all values are zero.
     -->
     <integer-array name="config_autoBrightnessKeyboardBacklightValues">
-    	<item>0</item>
-    	<item>0</item>
+    	<item>255</item>
+    	<item>255</item>
     	<item>0</item>
     	<item>0</item>
     	<item>0</item>
@@ -152,11 +152,13 @@
         <item>"usb0"</item>
     </string-array>
 
+    <string-array name="config_tether_wifi_regexs">
+        <item>wl0.1</item>
     <!-- Regex array of allowable upstream ifaces for tethering - for example if you want
          tethering on a new interface called "foo2" add <item>"foo\\d"</item> to the array -->
     <string-array translatable="false" name="config_tether_upstream_regexs">
         <item>"rmnet\\d"</item>
-        <item>"tiwlan\\d"</item>
+        <item>"ppp\\d"</item>
     </string-array>
 
     <!-- Boolean indicating if we require the use of DUN on mobile for tethering -->
