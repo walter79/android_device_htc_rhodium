@@ -43,14 +43,14 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv6j
 
 # Wifi related defines
-BOARD_WPA_SUPPLICANT_DRIVER := CUSTOM
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := libWifiApi
-BOARD_WLAN_TI_STA_DK_ROOT   := system/wlan/ti/sta_dk_4_0_4_32
-WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/wlan.ko"
-WIFI_DRIVER_MODULE_ARG      := ""
-WIFI_DRIVER_MODULE_NAME     := "wlan"
-WIFI_DRIVER_FW_AP_PATH      := "/etc/firmware/BCM4325_apsta.bin"
-WIFI_FIRMWARE_LOADER        := "wlan_loader"
+BOARD_WPA_SUPPLICANT_DRIVER := WEXT
+WPA_SUPPLICANT_VERSION  := VER_0_6_X
+BOARD_WLAN_DEVICE       := bcm4329
+WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/bcm4329.ko"
+WIFI_DRIVER_FW_STA_PATH := "/vendor/firmware/bcm4325-rtecdc.bin"
+WIFI_DRIVER_FW_AP_PATH := "/vendor/firmware/bcm4325_apsta.bin"
+WIFI_DRIVER_MODULE_ARG := "firmware_path=/vendor/firmware/bcm4325-rtecdc.bin nvram_path=/proc/calibration"
+WIFI_DRIVER_MODULE_NAME := "bcm4329"
 
 BOARD_KERNEL_CMDLINE := no_console_suspend=1 console=null
 BOARD_KERNEL_BASE := 0x19200000
