@@ -3,7 +3,7 @@
 #
 
 #wifi network etc..
-rild.libpath=/system/lib/libhtc_ril.so
+rild.libpath=/system/lib/libhtcgenric_ril.so
 ro.ril.hsxpa=2
 ro.ril.hsupa.category=12
 ro.ril.enable.a52=1
@@ -11,11 +11,11 @@ ro.ril.enable.a53=1
 ro.ril.def.agps.mode=2
 ro.ril.gprsclass=10
 ro.telephony.default_network=0
-wifi.interface=tiwlan0
+wifi.interface=wlan0
 wifi.supplicant_scan_interval=60
 
 #windows management
-ro.sf.lcd_density=160
+ro.sf.lcd_density=240
 windowsmgr.max_events_per_sec=60
 settings.display.autobacklight=1
 
@@ -24,11 +24,11 @@ persist.sys.rotationanimation=false
 
 # The OpenGL ES API level that is natively supported by this device.
 ro.opengles.version=65536
-ro.product.multi_touch_enabled=true
+#ro.product.multi_touch_enabled=true
 
 # Tweaks
 persist.sys.scrollingcache=2
-persist.sys.use_dithering=1
+persist.sys.use_dithering=0
 persist.sys.purgeable_assets=1
 ro.compcache.default=0
 
