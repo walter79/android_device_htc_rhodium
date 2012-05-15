@@ -157,6 +157,7 @@
     <string-array translatable="false" name="config_tether_upstream_regexs">
         <item>"rmnet\\d"</item>
         <item>"ppp\\d"</item>
+        <item>"eth\\d"</item>
     </string-array>
 
     <!-- Boolean indicating if we require the use of DUN on mobile for tethering -->
