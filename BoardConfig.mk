@@ -49,7 +49,7 @@ BOARD_WLAN_DEVICE       := bcm4329
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/bcm4329.ko"
 WIFI_DRIVER_FW_STA_PATH := "/vendor/firmware/bcm4325-rtecdc.bin"
 WIFI_DRIVER_FW_AP_PATH := "/vendor/firmware/bcm4325_apsta.bin"
-WIFI_DRIVER_MODULE_ARG := "firmware_path=/vendor/firmware/bcm4325-rtecdc.bin nvram_path=/proc/calibration"
+WIFI_DRIVER_MODULE_ARG := "firmware_path=/vendor/firmware/bcm4325-rtecdc.bin nvram_path=/proc/calibration iface_name=wlan "
 WIFI_DRIVER_MODULE_NAME := "bcm4329"
 
 BOARD_KERNEL_CMDLINE := no_console_suspend=1 console=null
