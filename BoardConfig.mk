@@ -45,6 +45,7 @@ TARGET_ARCH_VARIANT := armv6j
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := CUSTOM
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := libWifiApi
+BOARD_WLAN_TI_STA_DK_ROOT   := system/wlan/ti/sta_dk_4_0_4_32
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/bcm4329.ko"
 WIFI_DRIVER_FW_STA_PATH := "/vendor/firmware/bcm4325-rtecdc.bin"
 WIFI_DRIVER_FW_AP_PATH := "/vendor/firmware/bcm4325_apsta.bin"
