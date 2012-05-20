@@ -45,7 +45,6 @@ TARGET_ARCH_VARIANT := armv6j
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := wext
 WPA_SUPPLICANT_VERSION: = VER_0_8_X 
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB: = lib_driver_cmd_wext 
 BOARD_WLAN_DEVICE          := bcm4329
 WIFI_DRIVER_MODULE_PATH    := "/system/lib/modules/bcm4329.ko"
 WIFI_DRIVER_FW_STA_PATH    := "/vendor/firmware/bcm4325-rtecdc.bin"
