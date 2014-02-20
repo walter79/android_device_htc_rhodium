@@ -15,5 +15,5 @@
 #
 
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
-$(call inherit-product-if-exists, vendor/htc/hero/device_hero_eu-vendor.mk)
-$(call inherit-product, device/htc/hero/device_hero.mk)
+$(call inherit-product-if-exists, vendor/htc/rhodium/device_rhodium_eu-vendor.mk)
+$(call inherit-product, device/htc/rhodium/device_rhodium.mk)

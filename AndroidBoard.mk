@@ -20,13 +20,13 @@ $(call add-radio-file,recovery/images/bitmap_size.txt)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_TAGS := optional
-LOCAL_SRC_FILES := hero-keypad.kcm
+LOCAL_SRC_FILES := rhodium-keypad.kcm
 include $(BUILD_KEY_CHAR_MAP)
         
 # the system properties for each device, loaded by init
-file := $(TARGET_OUT)/build.hero.prop
+file := $(TARGET_OUT)/build.rhodium.prop
 ALL_PREBUILT += $(file)
-$(file) : $(LOCAL_PATH)/build.hero.prop | $(ACP)
+$(file) : $(LOCAL_PATH)/build.rhodium.prop | $(ACP)
 	$(transform-prebuilt-to-target)
 
--include vendor/htc/hero/AndroidBoardVendor.mk#
+-include vendor/htc/rhodium/AndroidBoardVendor.mk#

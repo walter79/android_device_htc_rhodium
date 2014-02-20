@@ -1,0 +1,11 @@
+ro.product.model=HTC Rhodium
+ro.product.brand=htc
+ro.product.name=rhodium
+ro.product.device=rhodium
+ro.product.board=rhodium
+# ro.build.product is obsolete; use ro.product.device
+ro.build.product=rhodium
+
+# GSM
+ro.telephony.default_network=0
+

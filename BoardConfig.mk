@@ -25,7 +25,7 @@ USE_CAMERA_STUB := true
 # Fake building with eclair cam
 BOARD_USES_ECLAIR_LIBCAMERA := true
 
--include vendor/htc/hero/BoardConfigVendor.mk
+-include vendor/htc/rhodium/BoardConfigVendor.mk
 
 TARGET_BOARD_PLATFORM := msm7k
 TARGET_BOARD_PLATFORM_GPU := qcom
@@ -33,9 +33,9 @@ TARGET_BOARD_PLATFORM_GPU := qcom
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
-TARGET_BOOTLOADER_BOARD_NAME := hero
-TARGET_OTA_ASSERT_DEVICE := hero
-PRODUCT_BUILD_PROP_OVERRIDES += TARGET_BOOTLOADER_BOARD_NAME=hero
+TARGET_BOOTLOADER_BOARD_NAME := rhodium
+TARGET_OTA_ASSERT_DEVICE := rhodium
+PRODUCT_BUILD_PROP_OVERRIDES += TARGET_BOOTLOADER_BOARD_NAME=rhodium
 
 # ARMv6-compatible processor rev 5 (v6l)
 TARGET_CPU_ABI := armeabi-v6j
@@ -82,7 +82,7 @@ TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 BOARD_AVOID_DRAW_TEXTURE_EXTENSION := true
 
 # OpenGL drivers config file path
-BOARD_EGL_CFG := device/htc/hero/egl.cfg
+BOARD_EGL_CFG := device/htc/rhodium/egl.cfg
 
 # No authoring clock for OpenCore
 # BOARD_NO_PV_AUTHORING_CLOCK := true
@@ -133,4 +133,4 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 #TARGET_RECOVERY_UI_LIB := librecovery_ui_hero librecovery_ui_htc
-TARGET_PREBUILT_KERNEL := device/htc/hero/kernel
+TARGET_PREBUILT_KERNEL := device/htc/rhodium/kernel

@@ -13,18 +13,16 @@
 # limitations under the License.
 
 #
-# This file is the build configuration for a full Android
+# This file is the build configuration for a generic Android
 # build for hero hardware. This cleanly combines a set of
 # device-specific aspects (drivers) with a device-agnostic
 # product configuration (apps).
 #
 
-
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/small_base.mk)
-$(call inherit-product, device/htc/hero/device_hero_eu.mk)
+$(call inherit-product, device/htc/rhodium/device_rhodium_us.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic.mk)
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := small_hero
-PRODUCT_DEVICE := hero
-PRODUCT_MODEL := Small Android on Hero
+PRODUCT_NAME := generic_rhodium
+PRODUCT_DEVICE := rhodium

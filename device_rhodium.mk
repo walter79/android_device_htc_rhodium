@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PACKAGE_OVERLAYS := device/htc/hero/overlay
+DEVICE_PACKAGE_OVERLAYS := device/htc/rhodium/overlay
 
 # Passion uses high-density artwork where available
 PRODUCT_LOCALES += mdpi
@@ -24,28 +24,28 @@ PRODUCT_COPY_FILES += \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml
     
 PRODUCT_COPY_FILES += \
-    device/htc/hero/vold.fstab:system/etc/vold.fstab
+    device/htc/rhodium/vold.fstab:system/etc/vold.fstab
 
 # Don't set /proc/sys/vm/dirty_ratio to 0 when USB mounting
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vold.umsdirtyratio=20
 
 # proprietary side of the device
-$(call inherit-product-if-exists, vendor/htc/hero/device_hero-vendor.mk)
+$(call inherit-product-if-exists, device/htc/rhodium/vendor/rhodium/device_rhodium-vendor.mk)
 
 # No zram in kernel, so use ramzswap for compcache
 PRODUCT_COPY_FILES += \
-    device/htc/hero/prebuilt/12compcache:system/etc/init.d/12compcache \
-    device/htc/hero/prebuilt/rzscontrol:system/xbin/rzscontrol
+    device/htc/rhodium/prebuilt/12compcache:system/etc/init.d/12compcache \
+    device/htc/rhodium/prebuilt/rzscontrol:system/xbin/rzscontrol
 
 PRODUCT_PACKAGES += \
     librs_jni \
-    hero-keypad.kcm \
-    sensors.hero \
-    lights.hero \
+    rhodium-keypad.kcm \
+    sensors.rhodium \
+    lights.rhodium \
     gralloc.msm7k \
     copybit.msm7k \
-    gps.hero \
+    gps.rhodium \
     wlan_loader \
     tiwlan.ini \
     dhcpcd.conf \
@@ -68,13 +68,13 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
 PRODUCT_COPY_FILES += \
-    device/htc/hero/init.hero.rc:root/init.hero.rc \
-    device/htc/hero/ueventd.hero.rc:root/ueventd.hero.rc
+    device/htc/rhodium/init.rhodium.rc:root/init.rhodium.rc \
+    device/htc/rhodium/ueventd.rhodium.rc:root/ueventd.rhodium.rc
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    device/htc/hero/hero-keypad.kl:system/usr/keylayout/hero-keypad.kl \
-    device/htc/hero/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl
+    device/htc/rhodium/rhodium-keypad.kl:system/usr/keylayout/rhodium-keypad.kl \
+    device/htc/rhodium/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl
     
 # GSM APN list
 PRODUCT_COPY_FILES += \
@@ -82,29 +82,28 @@ PRODUCT_COPY_FILES += \
 
 # media configuration xml file
 PRODUCT_COPY_FILES += \
-    device/htc/hero/media_profiles.xml:/system/etc/media_profiles.xml
+    device/htc/rhodium/media_profiles.xml:/system/etc/media_profiles.xml
 
 # Kernel Targets
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/htc/hero/kernel
+	LOCAL_KERNEL := device/htc/rhodium/kernel
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
-KERNEL_NAME := 2.6.29.6-flykernel-12a
 
 PRODUCT_COPY_FILES += \
-    device/htc/hero/modules/modules.dep.bb:system/lib/modules/$(KERNEL_NAME)/modules.dep.bb \
-    device/htc/hero/modules/modules.order:system/lib/modules/$(KERNEL_NAME)/modules.order \
-    device/htc/hero/modules/ip_gre.ko:system/lib/modules/$(KERNEL_NAME)/net/ipv4/ip_gre.ko \
-    device/htc/hero/modules/wlan.ko:system/lib/modules/$(KERNEL_NAME)/drivers/net/wireless/tiwlan1251/wlan.ko \
-    device/htc/hero/modules/hid-dummy.ko:system/lib/modules/$(KERNEL_NAME)/drivers/hid/hid-dummy.ko \
-    device/htc/hero/modules/ramzswap.ko:system/lib/modules/$(KERNEL_NAME)/drivers/staging/ramzswap/ramzswap.ko \
-    device/htc/hero/modules/cifs.ko:system/lib/modules/$(KERNEL_NAME)/fs/cifs/cifs.ko \
-    device/htc/hero/modules/fuse.ko:system/lib/modules/$(KERNEL_NAME)/fs/fuse/fuse.ko \
-    device/htc/hero/modules/wlan.ko:system/lib/modules/wlan.ko
+    device/htc/rhodium/modules/modules.dep.bb:system/lib/modules/$(KERNEL_NAME)/modules.dep.bb \
+    device/htc/rhodium/modules/modules.order:system/lib/modules/$(KERNEL_NAME)/modules.order \
+    device/htc/rhodium/modules/ip_gre.ko:system/lib/modules/$(KERNEL_NAME)/net/ipv4/ip_gre.ko \
+    device/htc/rhodium/modules/wlan.ko:system/lib/modules/$(KERNEL_NAME)/drivers/net/wireless/tiwlan1251/wlan.ko \
+    device/htc/rhodium/modules/hid-dummy.ko:system/lib/modules/$(KERNEL_NAME)/drivers/hid/hid-dummy.ko \
+    device/htc/rhodium/modules/ramzswap.ko:system/lib/modules/$(KERNEL_NAME)/drivers/staging/ramzswap/ramzswap.ko \
+    device/htc/rhodium/modules/cifs.ko:system/lib/modules/$(KERNEL_NAME)/fs/cifs/cifs.ko \
+    device/htc/rhodium/modules/fuse.ko:system/lib/modules/$(KERNEL_NAME)/fs/fuse/fuse.ko \
+    device/htc/rhodium/modules/wlan.ko:system/lib/modules/wlan.ko
 
 # stuff common to all HTC phones
 $(call inherit-product, device/htc/common/common.mk)
